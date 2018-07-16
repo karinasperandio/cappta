@@ -1,4 +1,4 @@
-# Teste cappta DevOps
+# Teste cappta DevOps A/B
 
 ## Construa as imagens
 
@@ -18,6 +18,24 @@ docker-compose -f src/docker-compose.yml -p cappta up
 ## Testando
 
 ```
-for i in `seq 1 20`; do curl http://localhost; done
-ab -n 500 -c 20 http://localhost/
+for i in `seq 1 100`; do curl http://localhost; done
+
+# esperado
+legado
+novo c546b64238cc
+legado
+legado
+novo fde88d31666c
+legado
+legado
+legado
+legado
+legado
+legado
+novo c546b64238cc
+legado
+legado
+novo fde88d31666c
+legado
+...
 ```

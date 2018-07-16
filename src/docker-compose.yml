@@ -1,14 +1,9 @@
 version: '2.4'
 services:
-  new_1:
+  new:
     image: cappta/novo
     platform: linux
-    expose:
-      - "80"
-
-  new_2:
-    image: cappta/novo
-    platform: linux
+    scale: 2
     expose:
       - "80"
 
@@ -24,10 +19,8 @@ services:
     ports:
       - "80:80"
     links:
-      - "new_1"
-      - "new_2"
+      - "new"
       - "legacy"
     depends_on:
-      - new_1
-      - new_2
+      - new
       - legacy
