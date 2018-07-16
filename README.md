@@ -1,4 +1,4 @@
-# 🐳 Teste cappta DevOps A/B
+# 🐳 Teste Cappta DevOps A/B
 
 ## Construa as imagens
 
