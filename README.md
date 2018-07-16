@@ -10,6 +10,7 @@ docker build --platform=linux   src/proxy  -t cappta/proxy
 
 ## Deploy da estrutura
 
+Docker compose:
 ```
 docker-compose -f src/docker-compose.yml -p cappta up
 ```
