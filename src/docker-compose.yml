@@ -1,0 +1,46 @@
+version: '2.4'
+services:
+  app_1:
+    image: cappta/novo
+    platform: linux
+    expose:
+      - "80"
+    networks:
+      forever_alone:
+        aliases:
+          - novo_1
+
+  app_2:
+    image: cappta/novo
+    platform: linux
+    expose:
+      - "80"
+    networks:
+      forever_alone:
+        aliases:
+          - novo_2
+
+  app_old:
+    image: cappta/legado
+    platform: windows
+    expose:
+      - "80"
+    networks:
+      forever_alone:
+        aliases:
+          - legado
+
+  proxy:
+    image: cappta/proxy
+    platform: linux
+    ports:
+      - "80:80"
+    depends_on:
+      - app_1
+      - app_2
+      - app_old
+    networks:
+      - forever_alone
+
+networks:
+  forever_alone:
